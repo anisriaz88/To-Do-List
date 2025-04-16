@@ -10,13 +10,13 @@ addButton.addEventListener("click", function () {
     if (task.value) {
         tasks.push(task.value);
         task.value = "";
-        renderTasks();
+        listTasks();
     } else {
         alert("Please enter a task.");
     }
     });
 
-function renderTasks() {
+function listTasks() {
     taskList.innerHTML = ""; 
     tasks.forEach(function (task, index) {
         let li = document.createElement("li");
@@ -39,7 +39,7 @@ function renderTasks() {
 
         deleteButton.addEventListener("click", function () {
             tasks.splice(index, 1);
-            renderTasks();
+            listTasks();
         });
 
         li.appendChild(deleteButton);
